@@ -1,18 +1,21 @@
 # CyberVault
 
-CyberVault is a gothic-themed local password manager built with Rust, Tauri, Vue 3, and SQLite.
+![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust)
+![Tauri](https://img.shields.io/badge/Tauri-24C8DB?style=for-the-badge&logo=tauri)
+![Vue.js](https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite)
 
-The application provides a secure desktop environment to store, manage, and generate passwords through a dark fantasy inspired interface.
+CyberVault is a gothic-themed local password manager built with Rust, Tauri 2, Vue 3, and SQLite.
 
-The goal of this project is to combine modern desktop development with Rust performance and a strong user experience.
+Inspired by dark fantasy and Souls-like aesthetics, CyberVault provides a secure offline environment to store, manage, and generate passwords through an immersive desktop interface.
+
+The project explores modern desktop application development by combining Rust performance with a reactive frontend experience.
 
 ---
 
-## Screenshots
+# Preview
 
-Add application screenshots here.
-
-Example:
+Add screenshots here:
 
 
 docs/
@@ -20,72 +23,94 @@ docs/
 ├── vault.png
 └── generator.png
 
+Example:
+
+
+CyberVault
+ ⚔ Forgotten Digital Grimoire ⚔
+
+ ┌─────────────────────────────┐
+ │ Discord                     │
+ │ melissa                     │
+ │ ************                │
+ │                             │
+ │        [ Reveal ]           │
+ └─────────────────────────────┘
+
 ---
 
 # Features
 
-## Password Management
+## Vault Management
 
-- Add new credentials
-- Store website, username, and password information
-- Display saved entries
+- Create password entries
+- Store website credentials
+- Display saved accounts
 - Delete vault entries
-- Local offline storage
+- Offline local storage
 
 ## Password Generator
 
-- Generate strong random passwords
-- Customizable password length
+- Generate strong passwords
+- Random secure generation
 - Support for:
   - Uppercase letters
   - Lowercase letters
   - Numbers
   - Special characters
 
-## Gothic User Interface
+## Gothic Interface
 
-- Dark fantasy inspired design
-- Medieval / Souls-like atmosphere
-- Gold and crimson color palette
-- Animated cards
-- Immersive desktop experience
+- Dark fantasy inspired UI
+- Souls-like atmosphere
+- Medieval color palette
+- Gold and crimson accents
+- Animated vault cards
 
-## Local Database
+## Local Storage
 
-- SQLite based storage
+- SQLite database
 - No cloud dependency
 - Fully offline application
 
 ---
 
-# Tech Stack
-
-## Frontend
-
-- Vue 3
-- JavaScript
-- CSS3
-- Tauri API
-
-## Backend
-
-- Rust
-- Tauri 2
-- SQLite
-- Rusqlite
-
-## Development Tools
-
-- Cargo
-- npm
-- Vite
-
----
-
 # Architecture
 
+CyberVault uses a modern desktop architecture where Vue handles the interface and Rust manages the application logic.
 
+```mermaid
+graph TD
+
+    A[Vue 3 Frontend] -->|Tauri API Invoke| B[Rust Backend]
+
+    B --> C[Command Handlers]
+
+    C --> D[SQLite Database]
+
+    D --> E[(vault.db)]
+
+    B --> F[Password Generator]
+
+    F --> G[Secure Random Generation]
+
+    C --> H[Vault Management]
+
+    H --> I[Add Credentials]
+
+    H --> J[Delete Credentials]
+
+    H --> K[Retrieve Credentials]
+
+
+    style A fill:#42b883,color:white
+    style B fill:#dea584,color:black
+    style D fill:#003b57,color:white
+    style E fill:#111,color:white
+
+Project Structure
 CyberVault
+
 ├── src
 │
 │   ├── App.vue
@@ -107,44 +132,49 @@ CyberVault
 │
 └── package.json
 
----
+Technology Stack
+Layer	Technology
+Desktop Framework	Tauri 2
+Frontend	Vue 3
+Language	JavaScript
+Backend	Rust
+Database	SQLite
+Database Driver	Rusqlite
+Build Tool	Vite
+Package Manager	npm
 
-# Installation
 
-## Requirements
-
-Make sure you have installed:
-
+Installation
+Requirements
+Install:
 - Node.js
 - Rust
 - Cargo
 - Tauri prerequisites
-
-Check versions:
-
-```bash
+Verify:
 node --version
+
 rustc --version
+
 cargo --version
 
-Clone the repository
+Clone Repository
 git clone https://github.com/yourusername/CyberVault.git
 
 cd CyberVault
 
-Install frontend dependencies
+Install Dependencies
 npm install
 
-Run development mode
+Run Development Mode
 npm run tauri dev
 
-The application will open as a desktop window.
+The application will start as a native desktop application.
 Database
 CyberVault automatically creates a local SQLite database:
 vault.db
 
-The database contains stored credentials locally.
-Example structure:
+Database structure:
 vault
 
 id
@@ -152,43 +182,45 @@ name
 login
 secret
 
+All data is stored locally.
 Security Roadmap
 Future security improvements:
 - AES-256 encryption
 - Master password authentication
 - Argon2 password hashing
-- Secure clipboard management
 - Automatic vault locking
+- Secure clipboard management
 - Password strength analysis
 Roadmap
 Version 1.0
 Completed:
 - Desktop application
+- Vue interface
+- Rust backend
 - SQLite storage
 - Password generator
-- Gothic interface
+- Gothic UI
 Version 2.0
 Planned:
-- Encrypted vault
+- Encrypted database
 - Master password
 - Search system
 - Categories
-- Password visibility toggle
+- Password visibility control
 Version 3.0
 Planned:
 - Import/export vault
 - Backup system
-- Cross-platform builds
+- Cross-platform releases
 - Advanced security features
-Why this project?
+Learning Goals
 CyberVault was created to explore:
 - Rust desktop development
 - Tauri architecture
-- Frontend/backend communication
-- Local data management
+- Frontend and backend communication
+- SQLite integration
 - Secure application design
-This project demonstrates how Rust can be used to build modern and efficient desktop applications.
-
+- Modern UI development
 
 GitHub:
 https://github.com/molosso
