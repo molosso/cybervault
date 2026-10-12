@@ -26,13 +26,16 @@ The goal of this project is to learn Rust desktop development, Tauri architectur
 
 ## Preview
 
-
 ![CyberVault Interface](docs/cybervault.png)
 
+Available screenshots:
+
+```
 docs/
 ├── home.png
 ├── vault.png
 └── generator.png
+```
 
 ---
 
@@ -40,20 +43,16 @@ docs/
 
 ```mermaid
 graph LR
+    UI[Vue 3 Interface] --> TA[Tauri API]
+    TA --> RS[Rust Backend]
+    RS --> DB[(SQLite Database)]
+```
 
-A[Vue 3 Interface]
+---
 
-B[Tauri API]
+## Project Structure
 
-C[Rust Backend]
-
-D[SQLite Database]
-
-A --> B
-B --> C
-C --> D
-
-Project Structure
+```
 CyberVault
 
 ├── src
@@ -72,47 +71,87 @@ CyberVault
 │   └── Cargo.toml
 │
 └── package.json
+```
 
-Technologies
-Frontend
+---
+
+## Technologies
+
+### Frontend
+
 - Vue 3
 - JavaScript
 - CSS
-Backend
+
+### Backend
+
 - Rust
 - Tauri 2
-Database
+
+### Database
+
 - SQLite
 - Rusqlite
-Installation
-Requirements
+
+---
+
+## Installation
+
+### Requirements
+
 - Node.js
 - Rust
 - Cargo
-Check:
+
+Check your versions:
+
+```bash
 node --version
 rustc --version
 cargo --version
+```
 
-Install dependencies
+---
+
+## Install dependencies
+
+```bash
 npm install
+```
 
-Run the application
+---
+
+## Run the application
+
+```bash
 npm run tauri dev
+```
 
-Database
+---
+
+## Database
+
 CyberVault creates a local SQLite database:
+
+```
 vault.db
+```
 
 Current structure:
+
+```
 vault
 
-- id
-- name
-- login
-- secret
+├── id
+├── name
+├── login
+└── secret
+```
 
-Future Improvements
+---
+
+## Future Improvements
+
 - Encrypt stored passwords
 - Master password authentication
 - Password categories
@@ -120,6 +159,8 @@ Future Improvements
 - Auto-lock vault
 - Export/import vault
 
-GitHub:
-https://github.com/molosso
+---
 
+## GitHub
+
+https://github.com/molosso
